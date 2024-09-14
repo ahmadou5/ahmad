@@ -1,4 +1,3 @@
-import { Card, CardDescription } from "../ui/card"
 
 export const Hero = () => {
     const star = [
