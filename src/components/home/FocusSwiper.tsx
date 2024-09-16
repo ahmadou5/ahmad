@@ -172,24 +172,23 @@ export default function FSwiper() {
         {focusList &&
           focusList.map((item, i) => (
             <SwiperSlide key={i}>
-              <div className="lg:h-[460px] h-[380px] lg:w-[60%] w-[90%] font-light lg:rounded-xl rounded-2xl ml-auto mr-auto cursor-pointer flex flex-col items-center justify-center bg-white/35">
-                <div className="w-auto h-8 flex lg:mb-0 mb-3 items-center justify-center lg:px-5 px-2 text-white/75 rounded-full bg-black/85">
+              <div className="lg:h-[460px] h-[380px] lg:w-[60%] w-[90%] font-light lg:rounded-xl rounded-2xl ml-auto mr-auto cursor-pointer flex flex-col items-center justify-center bg-black bg-opacity-30 ">
+                <div className="lg:w-auto w-[170px] h-8 flex lg:mb-0 mb-3 items-center justify-center lg:px-5 px-2 text-white/75 rounded-full bg-black/85">
                   {item.name}
                 </div>
                 <div className="w-[100%]">
                   {
                     item.list && item.list.map((image,i) => (
-                      <div className="flex ml-auto lg:mt-10 mt-6 mr-auto lg:w-[80%] w-[90%]" key={i}>
-                        <img className="lg:w-[150px] w-[25%] lg:mt-8 mt-2 h-[79px] lg:h-[150px] lg:rounded-full rounded-2xl lg:ml-auto lg:mr-2 ml-1 mr-1" key={i} src={image.first} />
-                        <img className="lg:w-[220px] w-[50%] lg:h-[220px] h-[150px]  rounded-full  ml-1 mr-1"  key={i} src={image.second} />
-                        <img className="lg:w-[150px] w-[25%] lg:mt-8 mt-20 h-[79px] lg:rounded-full rounded-2xl  lg:h-[150px] lg:ml-auto lg:mr-2 ml-1 mr-1 "  key={i} src={image.third} />
+                      <div className="flex ml-auto px-1 lg:px-5 py-1 lg:mt-10 mt-6 mr-auto lg:w-[80%] w-[90%]" key={i}>
+                        <img className="lg:w-[30%] w-[50%] lg:h-[40%] h-[120px] rounded-lg  ml-1 mr-1"  key={i} src={image.second} />
+                        <p className="w-[40] ml-auto text-sm lg:text-xl lg:mr-20 mr-2">sjgfhvsfjvfz;bv</p>
                       </div>
                       
                     ))
                   }
                 </div>
-                <div className="mt-12 ml-8 mr-auto text-white/75 mb-2 bg-black/80 w-[140px] h-9 rounded-lg flex items-center justify-center">
-                  {'Contact'}
+                <div className="mt-12 ml-20 mr-auto text-white/75 mb-2 bg-black/80 w-[190px] h-9 rounded-lg flex items-center justify-center">
+                  {`Buy ${item.name}`}
                 </div>
               </div>
             </SwiperSlide>

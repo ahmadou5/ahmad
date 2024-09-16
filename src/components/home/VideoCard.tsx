@@ -7,7 +7,7 @@ interface VideoCardProps {
   }
 export const VideoCard = ({ videoUrl }:VideoCardProps) => {
   const playerRef = useRef<any>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   const handlePlayClick = () => {
     if (isPlaying) {

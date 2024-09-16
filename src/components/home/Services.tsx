@@ -38,7 +38,7 @@ export const Services = () => {
         },
     ]
     return(
-    <div className="w-[100%] rounded-t-3xl bg-[#2A2829] py-28 flex flex-col items-center lg:justify-center  h-[2000px] lg:h-auto">
+    <div className="w-[100%] bg-[#2A2829] rounded-t-xl py-28 flex flex-col items-center lg:justify-center  h-[2000px] lg:h-auto">
         <div className="w-[80%] mt-10 flex ">
             <p className="text-7xl  text-start text-white/75 font-light">Efficient Services we offers</p>
         </div>

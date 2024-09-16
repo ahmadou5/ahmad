@@ -1,5 +1,12 @@
 
+import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import { Globe, Truck, BarChart, Leaf, ShieldCheck, Users } from 'lucide-react';
+
 export const Hero = () => {
+    const { scrollYProgress } = useViewportScroll();
+    const backgroundY:any = useTransform(scrollYProgress, [0, 1], ['0%', '10%']);
+    const opacity:any = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
     const star = [
         {
             name: 'star1',
@@ -46,20 +53,28 @@ export const Hero = () => {
         },
     ]
     return(
-    <div className="w-[100%] flex lg:mt-[170px] mt-[250px] h-[1300px]  lg:py-5 py-1 px-3 lg:h-auto">
+    <div
+    style={{
+        backgroundImage: 'url("./assets/bg3.jpeg")', // Replace with a high-quality image of a vast agricultural landscape
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        y: backgroundY,
+        opacity
+      }}
+    className="w-[100%] flex  ml-auto mr-auto mt-[] lg:mt-[65px]  rounded-b-2xl h-auto items-center justify-center  lg:py-5 py-1 px-3 lg:h-auto">
        <div className="lg:w-[90%] w-[100%] flex flex-col items-center justify-center">
         <div className="lg:w-[80%] lg:mt-[100px] mt-[230px] w-[90%] flex items-center justify-center">
-            <p className="lg:text-6xl text-2xl text-center  text-black/80 font-bold">Your trusted partner in Agricultural trade, delivering excellence and profit</p>
+            <p className="lg:text-6xl text-2xl text-center  text-white/80 font-bold">Your trusted partner in Agricultural trade, delivering excellence and profit</p>
         </div>
        <div className="lg:w-[47%] w-[90%] mt-16 rounded-full lg:py-2 py-1 lg:px-4 px-2 lg:h-10 lg:bg-[#97B4DE]/40">
-         <p className="text-center lg:text-[16px] text-[14px] text-black/90">{`Unlocking the world's agricultural potential, delivering exceptional value and profit`}</p>
+         <p className="text-center lg:text-[16px] text-[14px] text-white/75 lg:text-black/90">{`Unlocking the world's agricultural potential, delivering exceptional value and profit`}</p>
        </div>
-       <div className="lg:w-[50%] w-[80%] lg:text- text-[14px]  mt-[120px] rounded-full py-2 px-3 items-center justify-center flex">
-         <button className="lg:w-[300px] w-[90%] bg-black/90   text-white/85 lg:h-12 h-10 rounded-lg">
+       <div className="lg:w-[50%] w-[80%] lg:text- text-[14px] mb-10  mt-[120px] rounded-full py-2 px-3 items-center justify-center flex">
+         <button className="lg:w-[300px] w-[90%] bg-black/90   text-white/85 lg:h-12 h-11 rounded-lg">
             Discover Our Expertise
          </button>
        </div>
-       <div className="lg:w-[11%] w-[200px] lg:mt-[60px] mt-5 bg-[#97B4DE]/40 rounded-full lg:py-0.5 py-1 px-3 items-center justify-center flex">
+       <div className="lg:w-[11%] w-[200px] lg:mt-[60px] mt-5 bg-black/70 rounded-full lg:py-0.5 py-1 px-3 items-center justify-center flex">
          {
             star && star.map((item,i) => (
                 <div  key={i}>
@@ -75,7 +90,7 @@ export const Hero = () => {
          <p className="text-[14px]">From 20 Reviews</p>
        </div>
        <div className="lg:w-[98%] w-[100%] lg:mt-[40px] mt-2 rounded-full py-2 lg:px-3 px-1 items-center justify-center flex">
-         <div className="w-[100%] lg:mb-0 mb-[720px] h-[500px] py-8 mt-3 px-2 md:px-4 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 auto-cols-max ml-auto items-start rounded-xl bg-white/0">
+         <div className="w-[100%] lg:mb-0 mb-[720px] h-[500px] py-8 mt-8 px-2 md:px-4 lg:px-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 auto-cols-max ml-auto items-start rounded-xl bg-white/0">
              
                {
                  work && work.map((item,i) => (

@@ -2,9 +2,9 @@ import { VideoCard } from "./VideoCard";
 
 export const About = () => {
   return (
-    <div className="w-[100%] flex flex-col items-center justify-center font-light bg-black/35 text-white/75  py-5 px-3 lg:h-auto h-[1600px]">
+    <div className="w-[100%] flex flex-col items-center justify-center font-light bg-black/35 text-white/75  py-5 px-3 lg:h-auto h-[1300px]">
       <div className="w-[100%] flex items-center justify-center">
-        <p className="text-2xl lg:text-7xl ml-auto mr-auto lg:mt-10 mt-3 font-light">About</p>
+        <p className="text-2xl lg:text-7xl ml-auto mr-auto lg:mt-10 mt-3 font-light">About us</p>
       </div>
       <div className="flex lg:flex-row flex-col items-center lg:mt-10 mt-6 lg:justify-center justify-between">
         <div className="lg:w-[50%] w-[90%] lg:mb-0 mb-6 ">
