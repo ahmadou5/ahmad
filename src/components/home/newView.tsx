@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
-import { Globe, Truck, BarChart, Leaf, ShieldCheck, User, AlignJustify, Settings2Icon, HandshakeIcon, Users,  } from 'lucide-react';
+import { Globe, Truck, BarChart, Leaf, ChartCandlestickIcon, ShieldCheck, User, AlignJustify, Settings2Icon, HandshakeIcon, Users,  } from 'lucide-react';
 import { About } from './About';
 import { Hero } from './Hero';
 import { Focus } from './Focus';
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useApp } from '@/context/AppContext';
 
 // Import Swiper styles
 import "swiper/css";
@@ -14,10 +15,11 @@ import 'swiper/css/navigation';
 import { Navigation, Pagination } from "swiper/modules";
 
 const LandingPage = () => {
+ 
   const { scrollYProgress } = useViewportScroll();
   const backgroundY = useTransform(scrollYProgress, [0, 1], ['0%', '10%']);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-
+  
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-green-900 to-black text-white overflow-hidden">
       <motion.div 
@@ -35,11 +37,18 @@ const LandingPage = () => {
       <TeamSection />
       <ContactSection />
       <Footer />
+    
     </div>
   );
 };
 
-const Header = () => (
+const Header = () => {
+  const {burger, setBurger} = useApp();
+
+  const toggleModal = () => {
+    setBurger(!burger);
+  };
+  return(
   <header className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-50 backdrop-filter backdrop-blur-md">
     <nav className="container mx-auto px-6 py-4">
       <div className="flex justify-between items-center">
@@ -65,12 +74,14 @@ const Header = () => (
         </motion.ul>
         </div>
         <div className='flex lg:hidden'>
-            <AlignJustify />
+           <button className='bg-green-400/45 h-7 w-[140px] rounded-lg'>
+              contact us
+           </button>
         </div>
       </div>
     </nav>
   </header>
-);
+)};
 
 const HeroSection = () => {
   const { scrollYProgress } = useViewportScroll();
@@ -122,7 +133,7 @@ const ServicesSection = () => {
     
     { icon: Truck, title: "Import & Export", description: "Imports of various kinds of Agricultural consumables, and General Merchandise" },
     { icon: Settings2Icon, title: "Management", description: "Rendering of Technical Agricultural and management services to our various clients" },
-    { icon: Globe, title: "Marketing", description: "Marketing and Distribution of mainly Agricultural commoditty within the country and beyond" },
+    { icon: ChartCandlestickIcon, title: "Marketing", description: "Marketing and Distribution of mainly Agricultural commoditty within the country and beyond" },
     { icon: HandshakeIcon, title: "Contracts", description: "Contracts in Agricultural Engineering, agricultural products supply and technical services to major agricultural companies" },
   ];
 

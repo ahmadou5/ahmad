@@ -5,16 +5,20 @@ import { createContext, useContext, useState } from "react";
 
 
 const initvalue:any = {
-    name:'empty'
+    name:'empty',
+    burger: false
 }
 const AppContext = createContext(initvalue)
 
 
 export const AppContextProvider = ({children}:ReactChildrenProps) => {
     const [name,setName] = useState('Ahmadou 7 Hauwa')
+    const [burger,setBurger] = useState<boolean>(false);
     const value:any = {
         name,
-        setName
+        setName,
+        burger,
+        setBurger
     }
     return (
         <AppContext.Provider value={value}>

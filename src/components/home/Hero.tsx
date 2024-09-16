@@ -1,12 +1,13 @@
 
 import { motion,  useScroll, useTransform } from 'framer-motion';
 import { Globe, Truck, BarChart, Leaf, ShieldCheck, Users } from 'lucide-react';
+import { useApp } from '@/context/AppContext';
 
 export const Hero = () => {
     const { scrollYProgress } = useScroll();
     const backgroundY:unknown = useTransform(scrollYProgress, [0, 1], ['0%', '10%']);
     const opacity:any = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-
+  
     const star = [
         {
             name: 'star1',
@@ -103,6 +104,7 @@ export const Hero = () => {
          </div>
        </div>
        </div>
+     
     </div>
 )
 }
