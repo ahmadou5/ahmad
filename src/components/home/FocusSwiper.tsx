@@ -180,14 +180,14 @@ export default function FSwiper() {
                   {
                     item.list && item.list.map((image,i) => (
                       <div className="flex ml-auto px-1 lg:px-5 py-1 lg:mt-10 mt-6 mr-auto lg:w-[80%] w-[90%]" key={i}>
-                        <img className="lg:w-[30%] w-[50%] lg:h-[40%] h-[120px] rounded-lg  ml-1 mr-1"  key={i} src={image.second} />
-                        <p className="w-[40] ml-auto text-sm lg:text-xl lg:mr-20 mr-2">sjgfhvsfjvfz;bv</p>
+                        <img className="lg:w-[30%] w-[50%] lg:h-[40%] h-[120px] rounded-lg  ml-auto mr-auto"  key={i} src={image.second} />
+                        
                       </div>
                       
                     ))
                   }
                 </div>
-                <div className="mt-12 ml-20 mr-auto text-white/75 mb-2 bg-black/80 w-[190px] h-9 rounded-lg flex items-center justify-center">
+                <div className="mt-12 ml-auto mr-auto text-white/75 mb-2 bg-black/80 w-[190px] h-9 rounded-lg flex items-center justify-center">
                   {`Buy ${item.name}`}
                 </div>
               </div>

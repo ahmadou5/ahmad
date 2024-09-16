@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
-import { Globe, Truck, BarChart, Leaf, ShieldCheck, Settings2Icon, HandshakeIcon, Users,  } from 'lucide-react';
+import { Globe, Truck, BarChart, Leaf, ShieldCheck, User, AlignJustify, Settings2Icon, HandshakeIcon, Users,  } from 'lucide-react';
 import { About } from './About';
 import { Hero } from './Hero';
 import { Focus } from './Focus';
@@ -48,9 +48,9 @@ const Header = () => (
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-3xl font-bold">Sambaau</h1>
+          <h1 className="lg:text-3xl text-xl lg:font-bold text-light">Sambaau</h1>
         </motion.div>
-        <div className='lg:block flex'>
+        <div className='lg:block hidden'>
         <motion.ul
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -64,8 +64,8 @@ const Header = () => (
           ))}
         </motion.ul>
         </div>
-        <div>
-
+        <div className='flex lg:hidden'>
+            <AlignJustify />
         </div>
       </div>
     </nav>
@@ -235,8 +235,8 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section className="py-20 bg-green-900 bg-opacity-30">
-      <div className="container mx-auto px-6">
+    <section className="py-20 w-[100%] bg-green-900 bg-opacity-30">
+      <div className="container w-[100%] mx-auto px-6">
         <h2 className="text-3xl md:text-5xl font-light text-center mb-16">What Our Clients Say</h2>
         <Swiper 
            slidesPerView={1}
@@ -246,8 +246,8 @@ const TestimonialsSection = () => {
              clickable: true,
            }}
            modules={[Navigation]}
-           className="mySwiper">
-        <div className="grid grid-cols-1 lg:w-[40%] md:grid-cols-3 gap-12">
+           className="mySwiper w-[100%]">
+        <div className="grid grid-cols-1 lg:w-[100%] md:grid-cols-3 gap-12">
          
           {testimonials.map((testimonial, index) => (
            
@@ -257,11 +257,14 @@ const TestimonialsSection = () => {
            initial={{ opacity: 0, y: 50 }}
            whileInView={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.5, delay: index * 0.1 }}
-           className="bg-black bg-opacity-50 rounded-lg p-8"
+           className="bg-black bg-opacity-50 lg:w-[50%] w-[90%] ml-auto mr-auto h-[280px]  rounded-lg p-8"
          >
-           <p className="text-lg mb-4">{testimonial.quote}</p>
+           <div className='lg:w-20 lg:mb-7 mb-8 flex items-center justify-center rounded-full lg:h-20 bg-black bg-opacity-50 w-[73px] h-[73px]'>
+            <User className='w-[80%] h-[80%] text-green-600/70' />
+           </div>
+           <p className="lg:text-lg text-sm lg:mb-6 mb-5">{testimonial.quote}</p>
            <p className="font-semibold">{testimonial.name}</p>
-           <p className="text-green-400">{testimonial.role}</p>
+           <p className="text-green-500/90">{testimonial.role}</p>
          </motion.div>
            </SwiperSlide>
        ))}
@@ -321,12 +324,14 @@ const TestimonialsSection = () => {
                 initial={{ opacity: 0, scale: 0.5 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                className="bg-gray-800 rounded-lg overflow-hidden shadow-lg"
+                className="bg-white/15 bg-opacity-75 rounded-lg overflow-hidden shadow-lg"
               >
-                <img src={member.image} alt={member.name} className="w-full h-64 object-cover" />
+                <img src={member.image} alt={member.name} className="w-full h-[270px] object-cover" />
                 <div className="p-6">
-                  <h3 className="text-2xl font-semibold mb-2">{member.name}</h3>
-                  <p className="text-green-400">{member.role}</p>
+                  <h3 className="lg:text-2xl text-xl font-extralight mb-3">{member.name}</h3>
+                  <div className='w-[120px] lg:w-[120px] flex items-center justify-center lg:h-8  h-8 bg-black rounded-3xl'>
+                    <p className="text-green-400">{member.role}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
