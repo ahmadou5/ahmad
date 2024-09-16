@@ -1,10 +1,10 @@
 
-import { motion, useViewportScroll, useTransform } from 'framer-motion';
+import { motion,  useScroll, useTransform } from 'framer-motion';
 import { Globe, Truck, BarChart, Leaf, ShieldCheck, Users } from 'lucide-react';
 
 export const Hero = () => {
-    const { scrollYProgress } = useViewportScroll();
-    const backgroundY:any = useTransform(scrollYProgress, [0, 1], ['0%', '10%']);
+    const { scrollYProgress } = useScroll();
+    const backgroundY:unknown = useTransform(scrollYProgress, [0, 1], ['0%', '10%']);
     const opacity:any = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
     const star = [
@@ -58,7 +58,7 @@ export const Hero = () => {
         backgroundImage: 'url("./assets/bg3.jpeg")', // Replace with a high-quality image of a vast agricultural landscape
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        y: backgroundY,
+       
         opacity
       }}
     className="w-[100%] flex  ml-auto mr-auto mt-[] lg:mt-[65px]  rounded-b-2xl h-auto items-center justify-center  lg:py-5 py-1 px-3 lg:h-auto">

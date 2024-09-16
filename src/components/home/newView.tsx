@@ -50,6 +50,7 @@ const Header = () => (
         >
           <h1 className="text-3xl font-bold">Sambaau</h1>
         </motion.div>
+        <div className='lg:block flex'>
         <motion.ul
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -62,6 +63,10 @@ const Header = () => (
             </li>
           ))}
         </motion.ul>
+        </div>
+        <div>
+
+        </div>
       </div>
     </nav>
   </header>
