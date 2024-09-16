@@ -65,13 +65,13 @@ export const Hero = () => {
     className="w-[100%] flex  ml-auto mr-auto mt-[] lg:mt-[65px]  rounded-b-2xl h-auto items-center justify-center  lg:py-5 py-1 px-3 lg:h-auto">
        <div className="lg:w-[90%] w-[100%] flex flex-col items-center justify-center">
         <div className="lg:w-[80%] lg:mt-[100px] mt-[230px] w-[90%] flex items-center justify-center">
-            <p className="lg:text-6xl text-2xl text-center  text-white/80 font-bold">Your trusted partner in Agricultural trade, delivering excellence and profit</p>
+            <p className="lg:text-6xl text-3xl text-center  text-white/80 font-bold">Your trusted partner in Agricultural trade, delivering excellence and profit</p>
         </div>
-       <div className="lg:w-[47%] w-[90%] mt-16 rounded-full lg:py-2 py-1 lg:px-4 px-2 lg:h-10 lg:bg-[#97B4DE]/40">
-         <p className="text-center lg:text-[16px] text-[14px] text-white/75 lg:text-black/90">{`Unlocking the world's agricultural potential, delivering exceptional value and profit`}</p>
+       <div className="lg:w-[47%] w-[90%] mt-16 rounded-full lg:py-2 py-1 lg:px-4 px-2 lg:h-10 lg:bg-green-500/40">
+         <p className="text-center lg:text-[16px] text-[14px] text-white/75 lg:text-white/90">{`Unlocking the world's agricultural potential, delivering exceptional value and profit`}</p>
        </div>
        <div className="lg:w-[50%] w-[80%] lg:text- text-[14px] mb-10  mt-[120px] rounded-full py-2 px-3 items-center justify-center flex">
-         <button className="lg:w-[300px] w-[90%] bg-black/90   text-white/85 lg:h-12 h-11 rounded-lg">
+         <button className="lg:w-[300px] w-[90%] bg-green-400/70   text-white/85 lg:h-12 h-12 rounded-xl">
             Discover Our Expertise
          </button>
        </div>

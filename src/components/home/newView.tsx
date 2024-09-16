@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useViewportScroll, useTransform } from 'framer-motion';
-import { Globe, Truck, BarChart, Leaf, ChartCandlestickIcon, ShieldCheck, User, AlignJustify, Settings2Icon, HandshakeIcon, Users,  } from 'lucide-react';
+import { Globe, Truck, BarChart, XIcon, Leaf, ChartCandlestickIcon, ShieldCheck, User, AlignJustify, Settings2Icon, HandshakeIcon, Users,  } from 'lucide-react';
 import { About } from './About';
 import { Hero } from './Hero';
 import { Focus } from './Focus';
@@ -43,15 +43,12 @@ const LandingPage = () => {
 };
 
 const Header = () => {
-  const {burger, setBurger} = useApp();
+  const [expand,setExpand] = useState(true)
 
-  const toggleModal = () => {
-    setBurger(!burger);
-  };
   return(
-  <header className="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-50 backdrop-filter backdrop-blur-md">
-    <nav className="container mx-auto px-6 py-4">
-      <div className="flex justify-between items-center">
+  <header className={`fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-50 backdrop-filter backdrop-blur-md`}>
+    <nav className={`container mx-auto lg:py-4 px-6 ${expand ? 'py-5':'py-5'}`}>
+      <div className="flex mb-2 lg:mb-0  justify-between items-center">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -66,7 +63,7 @@ const Header = () => {
           transition={{ duration: 0.5 }}
           className="flex space-x-8"
         >
-          {['Home', 'Services', 'Global Reach', 'Contact'].map((item) => (
+          {['Services',  'Contact'].map((item) => (
             <li key={item}>
               <a href={`#${item.toLowerCase()}`} className="hover:text-green-400 transition-colors">{item}</a>
             </li>
@@ -74,11 +71,21 @@ const Header = () => {
         </motion.ul>
         </div>
         <div className='flex lg:hidden'>
-           <button className='bg-green-400/45 h-7 w-[140px] rounded-lg'>
+          {expand ? <XIcon onClick={() => setExpand(false)}/>:<AlignJustify onClick={() => setExpand(true)}/>}
+        </div>
+      </div>
+      { expand && <div className='flex h-[90px] flex-col mt-7 lg:hidden'>
+        {['Services'].map((item) => (
+            <div key={item}>
+              <a href={`#${item.toLowerCase()}`} className="hover:text-green-400 transition-colors">{item}</a>
+            </div>
+          ))}
+        <div className='mb-1 mt-3'>
+        <button className='bg-green-400/45 h-7 w-[140px] rounded-lg'>
               contact us
            </button>
         </div>
-      </div>
+      </div>}
     </nav>
   </header>
 )};
@@ -240,9 +247,8 @@ const GlobalReachSection = () => (
 
 const TestimonialsSection = () => {
   const testimonials = [
-    { name: "John Doe", role: "Farm Owner, USA", quote: "Sambaau's expertise has significantly expanded our market reach." },
-    { name: "John Doe", role: "Farm Owner, USA", quote: "Sambaau's expertise has significantly expanded our market reach." },
-    { name: "John Doe", role: "Farm Owner, USA", quote: "Sambaau's expertise has significantly expanded our market reach." },
+    { name: "Usman Sambo", role: "Farmer, Nigeria", quote: "Our partnership with Sambaau has greatly enhanced our market penetration." },
+    { name: "Suleiman Hassan", role: "Farmer, Nigeria", quote: "Collaborating with Sambaau has notably increased our industry presence." },
   ];
 
   return (
@@ -366,10 +372,11 @@ const ContactSection = () => (
       </motion.h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div>
-          <h3 className="lg:text-2xl text-xl  font-light mb-4">Contact Information</h3>
-          <p className="mb-2">Email: info@sambaau.com</p>
-          <p className="mb-2">Phone: +234 8174082307</p>
-          <p className="mb-4">Address: 123 Agri Lane, Global City, 12345</p>
+          <h3 className="lg:text-2xl text-xl   font-light mb-4">Contact Information</h3>
+          <p className="mb-2">Email: sanbaauworldwideltd@gmail.com</p>
+          <p className="mb-2">Phone: +234 8140207147</p>
+          <p className="mb-1 ">Address: No.055 idi Maradi Street Dawanau int ,Grain Market, Dawakin Tofa LGA, Kano ,Nigeria. </p>
+
           <div className="flex space-x-4">
             {/* Add social media icons/links here */}
           </div>
