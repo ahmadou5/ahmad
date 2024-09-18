@@ -13,6 +13,7 @@ import "swiper/css";
 import 'swiper/css/navigation';
 // import required modules
 import { Navigation, Pagination } from "swiper/modules";
+import CofounderVideos from './Founders';
 
 const LandingPage = () => {
  
@@ -33,6 +34,7 @@ const LandingPage = () => {
       <Focus />
       <GlobalReachSection />
       <TestimonialsSection />
+      <CofounderVideos/>
       <About />
       <TeamSection />
       <ContactSection />
@@ -43,7 +45,7 @@ const LandingPage = () => {
 };
 
 const Header = () => {
-  const [expand,setExpand] = useState(true)
+  const [expand,setExpand] = useState(false)
 
   return(
   <header className={`fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-50 backdrop-filter backdrop-blur-md`}>
@@ -54,7 +56,7 @@ const Header = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="lg:text-3xl text-xl lg:font-bold text-light">Sambaau</h1>
+          <h1 className="lg:text-3xl text-xl lg:font-bold text-light">Sanbaau</h1>
         </motion.div>
         <div className='lg:block hidden'>
         <motion.ul
@@ -74,15 +76,11 @@ const Header = () => {
           {expand ? <XIcon onClick={() => setExpand(false)}/>:<AlignJustify onClick={() => setExpand(true)}/>}
         </div>
       </div>
-      { expand && <div className='flex h-[90px] flex-col mt-7 lg:hidden'>
-        {['Services'].map((item) => (
-            <div key={item}>
-              <a href={`#${item.toLowerCase()}`} className="hover:text-green-400 transition-colors">{item}</a>
-            </div>
-          ))}
+      { expand && <div className='flex h-[50px] flex-col mt-7 lg:hidden'>
+        
         <div className='mb-1 mt-3'>
-        <button className='bg-green-400/45 h-7 w-[140px] rounded-lg'>
-              contact us
+        <button className='bg-green-400/45 h-8 w-[160px] rounded-lg'>
+              Contact us
            </button>
         </div>
       </div>}
@@ -330,7 +328,7 @@ const TestimonialsSection = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="lg:text-5xl text-2xl font-extralight text-center mb-20"
+            className="lg:text-5xl text-3xl font-extralight text-center mb-20"
           >
             Meet Our Team
           </motion.h2>
@@ -366,7 +364,7 @@ const ContactSection = () => (
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="text-4xl md:text-5xl font-bold text-center mb-16"
+        className="text-3xl md:text-5xl font-bold text-center mb-16"
       >
         Contact us
       </motion.h2>
@@ -374,7 +372,9 @@ const ContactSection = () => (
         <div>
           <h3 className="lg:text-2xl text-xl   font-light mb-4">Contact Information</h3>
           <p className="mb-2">Email: sanbaauworldwideltd@gmail.com</p>
-          <p className="mb-2">Phone: +234 8140207147</p>
+          <p className="mb-2">our CEO Phone: +234 8140207147</p>
+          <p className="mb-2">Secretery Phone: +234 8064950702</p>
+          <p className="mb-2"></p>
           <p className="mb-1 ">Address: No.055 idi Maradi Street Dawanau int ,Grain Market, Dawakin Tofa LGA, Kano ,Nigeria. </p>
 
           <div className="flex space-x-4">
@@ -406,7 +406,7 @@ const ContactSection = () => (
 const Footer = () => (
   <footer className="bg-black bg-opacity-90 py-8">
     <div className="container mx-auto px-6 text-center">
-      <p>&copy; 2024 Sambaau. All rights reserved.</p>
+      <p>&copy; 2024 Sanbaau. All rights reserved.</p>
     </div>
   </footer>
 );

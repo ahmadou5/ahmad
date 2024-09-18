@@ -2,18 +2,18 @@ import { VideoCard } from "./VideoCard";
 
 export const About = () => {
   return (
-    <div className="w-[100%] flex flex-col items-center justify-center font-light bg-black/35 text-white/75  py-5 px-3 lg:h-auto h-[1300px]">
+    <div className="w-[100%] py-12 flex flex-col items-center justify-center font-light bg-black/35 text-white/75 px-3 lg:h-[2000px] h-[1200px]">
       <div className="w-[100%] flex items-center justify-center">
-        <p className="text-2xl lg:text-7xl ml-auto mr-auto lg:mt-10 mt-3 font-light">About us</p>
+        <p className="text-3xl lg:text-7xl ml-auto mr-auto lg:mt-10 mt-3 font-light">About us</p>
       </div>
       <div className="flex lg:flex-row flex-col items-center lg:mt-10 mt-6 lg:justify-center justify-between">
-        <div className="lg:w-[50%] w-[90%] lg:mb-0 mb-6 ">
+        <div className="lg:w-[80%] lg:text-2xl w-[90%] lg:mb-0 mb-6 ">
           <div className="lg:px-7 px-3 lg:py-4 py-2 lg:w-[80%] w-[100%] ml-auto mr-auto items-start">
-          <div className="bg-black h-7 w-[90px] mb-2 rounded-xl flex items-center justify-center">
-            <p className="text-white/70">History</p>
+          <div className="bg-black lg:h-9 h-7 lg:w-[120px] w-[90px] mb-2 rounded-xl flex items-center justify-center">
+            <p className="text-white/70 text-lg">History</p>
           </div>
             <p>
-              Sambaau Worldwide limited was incorporated in 2017 as a limited
+              Sanbaau Worldwide limited was incorporated in 2017 as a limited
               liability company, under the company and allied Matters act 1990
               with registration Number (RC:7144989), as part of our group
               holding companies strategic expansion and consoliation plan on
@@ -29,7 +29,7 @@ export const About = () => {
           </p>
           </div>
           <div  className="lg:px-7 px-3 lg:py-4 py-2 lg:w-[80%] w-[100%] ml-auto mr-auto lg:items-start items-center">
-          <div className="bg-black h-7 w-[90px] mb-2 rounded-xl flex items-center justify-center">
+          <div className="bg-black lg:h-9 h-7 lg:w-[120px] w-[90px] mb-2 rounded-xl flex items-center justify-center">
             <p className="text-white/70">Vision</p>
           </div>
           <p>
@@ -40,7 +40,7 @@ export const About = () => {
           </p>
           </div>
           <div  className="lg:px-7 px-3 lg:py-4 py-2 lg:w-[80%] w-[100%] ml-auto mr-auto lg:items-start items-center">
-          <div className="bg-black h-7 w-[90px] mb-2 rounded-xl flex items-center justify-center">
+          <div className="bg-black lg:h-9 h-7 lg:w-[120px] w-[90px] mb-2 rounded-xl flex items-center justify-center">
             <p className="text-white/70 font-light">Mission</p>
           </div>
           <p>
@@ -49,9 +49,7 @@ export const About = () => {
           
           </div>
         </div>
-        <div className="lg:w-[50%] w-[95%] h-[100%] lg:mt-0 mt-8 lg:rounded-lg rounded-2xl bg-black flex items-center justify-center">
-            <VideoCard videoUrl="./assets/video/123.mp4" />
-        </div>
+        
       </div>
     </div>
   );

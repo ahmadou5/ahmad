@@ -14,7 +14,7 @@ const FarmProductCard = ({ productName, price, imageUrl }:productprops) => {
         window.open(whatsappUrl, '_blank');
     };   
   return (
-    <div className="max-w-sm ml-auto mr-auto rounded-xl overflow-hidden shadow-lg bg-black/40 bg-opacity-60 transform transition duration-500 hover:rounded-xl ">
+    <div className="max-w-sm ml-auto mr-auto rounded-xl overflow-hidden shadow-lg bg-black/40 bg-opacity-60 transform transition duration-500 hover:rounded-xl  ">
       <div className="relative">
         <img className="w-full h-48 object-cover" src={imageUrl || "/api/placeholder/400/300"} alt={productName} />
         <div className="absolute top-0 right-0 bg-green-500 text-white px-2 py-1 m-2 rounded-full text-sm font-semibold">
