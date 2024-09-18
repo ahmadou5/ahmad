@@ -8,13 +8,13 @@ interface productprops {
 }
 [];
 const FarmProductCard = ({ productName, price, imageUrl }:productprops) => {
-    const sendWhatsappMessage = () => {
-        const encodedMessage = encodeURIComponent('Hello malan');
+    const sendWhatsappMessage = (product:string) => {
+        const encodedMessage = encodeURIComponent(`Hello sir, Im Contacting You from Your Company Website i just saw the available Product their and i'm interested in ${product} lets talk if you have time. thank you`);
         const whatsappUrl = `https://wa.me/${+2348174082307}?text=${encodedMessage}`;
         window.open(whatsappUrl, '_blank');
     };   
   return (
-    <div className="max-w-sm ml-auto mr-auto rounded-xl overflow-hidden shadow-lg bg-black/40 bg-opacity-60 transform transition duration-500 hover:rounded-xl  ">
+    <div className="lg:max-w-sm w-[97%]  ml-auto mr-auto rounded-xl overflow-hidden shadow-lg bg-black/40 bg-opacity-60 transform transition duration-500 hover:rounded-xl  ">
       <div className="relative">
         <img className="w-full h-48 object-cover" src={imageUrl || "/api/placeholder/400/300"} alt={productName} />
         <div className="absolute top-0 right-0 bg-green-500 text-white px-2 py-1 m-2 rounded-full text-sm font-semibold">
@@ -29,7 +29,7 @@ const FarmProductCard = ({ productName, price, imageUrl }:productprops) => {
         <div className="flex justify-between items-center">
           {/**<span className="text-xl font-bold text-green-600">${price?.toFixed(2) || 10}</span>**/}
           <button onClick={() => {
-            sendWhatsappMessage()
+            sendWhatsappMessage(productName)
             alert('Buying')
           }
           } className="bg-green-500 hover:bg-green-600 text-white font-bold py-1.5 px-5 rounded-full transition duration-300 ease-in-out flex items-center">
