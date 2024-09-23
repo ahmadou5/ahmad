@@ -56,7 +56,7 @@ const Header = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="lg:text-3xl text-xl lg:font-bold text-light">Sanbaau</h1>
+          <h1 className="lg:text-xl text-sm lg:font-bold text-light">{'Sanbaau worldwide'.toLocaleUpperCase()}</h1>
         </motion.div>
         <div className='lg:block hidden'>
         <motion.ul

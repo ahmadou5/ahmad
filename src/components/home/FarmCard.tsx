@@ -10,7 +10,7 @@ interface productprops {
 const FarmProductCard = ({ productName, price, imageUrl }:productprops) => {
     const sendWhatsappMessage = (product:string) => {
         const encodedMessage = encodeURIComponent(`Hello sir, Im Contacting You from Your Company Website i just saw the available Product their and i'm interested in ${product} lets talk if you have time. thank you`);
-        const whatsappUrl = `https://wa.me/${+2348174082307}?text=${encodedMessage}`;
+        const whatsappUrl = `https://wa.me/${+2348064950702}?text=${encodedMessage}`;
         window.open(whatsappUrl, '_blank');
     };   
   return (
